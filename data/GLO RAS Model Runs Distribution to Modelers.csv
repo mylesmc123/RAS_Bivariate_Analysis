@@ -1,0 +1,21 @@
+﻿GLO RAS Events              ,Modeler   ,Model Location                                                                                                    ,PlanID ,U Flow File ID ,Geometry
+BaseModel                   ,          ,                                                                                                                  ,p01    ,u01            ,g01
+050yr_Atlas_14              ,Angshuman ,S:\For_Angshuman\GLO_ProductionRuns\HECRASV6.3.1_BaseModel                                                        ,p30    ,u30            ,g01
+050y_ Left_PD_Bivariate     ,Angshuman ,S:\For_Angshuman\GLO_ProductionRuns\HECRASV6.3.1_BaseModel                                                        ,p31    ,u31            ,g01
+050yr_MostLikely_Bivariate  ,Luis      ,S:\for_Luis\Myles_GLO\HECRASV6.3.1_BaseModel                                                                      ,p32    ,u32            ,g01
+050yr_Right_SD_Bivariate    ,Angshuman ,S:\For_Angshuman\GLO_ProductionRuns\HECRASV6.3.1_BaseModel                                                        ,p33    ,u33            ,g01
+010yr_Atlas_14              ,Yushi     ,S:\For_Yushi\GLO_ProductionRuns\HECRASV6.3.1_BaseModel                                                            ,p10    ,u10            ,g01
+010yr_Left_PD_Bivariate     ,Yushi     ,S:\For_Yushi\GLO_ProductionRuns\HECRASV6.3.1_BaseModel                                                            ,p11    ,u11            ,g01
+010yr_MostLikely_Bivariate  ,Yushi     ,S:\For_Yushi\GLO_ProductionRuns\HECRASV6.3.1_BaseModel                                                            ,p12    ,u12            ,g01
+010yr_Right_SD_Bivariate    ,Yushi     ,S:\For_Yushi\GLO_ProductionRuns\HECRASV6.3.1_BaseModel                                                            ,p13    ,u13            ,g01
+100yr_Atlas_14              ,Luis      ,S:\for_Luis\Myles_GLO\HECRASV6.3.1_BaseModel                                                                      ,p50    ,u50            ,g01
+100yr_Left_PD_Bivariate     ,Luis      ,S:\for_Luis\Myles_GLO\HECRASV6.3.1_BaseModel                                                                      ,p51    ,u51            ,g01
+100yr_MostLikely_Bivariate  ,Luis      ,S:\for_Luis\Myles_GLO\HECRASV6.3.1_BaseModel                                                                      ,p52    ,u52            ,g01
+100yr_Right_SD_Bivariate    ,Luis      ,S:\for_Luis\Myles_GLO\HECRASV6.3.1_BaseModel                                                                      ,p53    ,u53            ,g01
+500yr_Atlas_14              ,Luis      ,S:\for_Luis\Myles_GLO\HECRASV6.3.1_BaseModel                                                                      ,p70    ,u70            ,g01
+500yr_Left_PD_Bivariate     ,Luis      ,S:\for_Luis\Myles_GLO\HECRASV6.3.1_BaseModel                                                                      ,p71    ,u71            ,g01
+500yr_MostLikely_Bivariate  ,Luis      ,S:\for_Luis\Myles_GLO\HECRASV6.3.1_BaseModel                                                                      ,p72    ,u72            ,g01
+500yr_Right_SD_Bivariate    ,Myles     ,V:\projects\p00659_dec_glo_phase3\01_processing\merge_ras_50_runs\myles\GLO_ProductionRuns\HECRASV6.3.1_BaseModel ,p73    ,u73            ,g01
+Harvey_AORC(no_wind))_Epoch ,Myles     ,V:\projects\p00659_dec_glo_phase3\01_processing\merge_ras_50_runs\myles\GLO_ProductionRuns\HECRASV6.3.1_BaseModel ,p93    ,u93            ,g01
+Ike_AORC(no_wind)_Epoch     ,Myles     ,V:\projects\p00659_dec_glo_phase3\01_processing\merge_ras_50_runs\myles\GLO_ProductionRuns\HECRASV6.3.1_BaseModel ,p94    ,u94            ,g01
+Rita_AORC(no_wind)_Epoch    ,Myles     ,V:\projects\p00659_dec_glo_phase3\01_processing\merge_ras_50_runs\myles\GLO_ProductionRuns\HECRASV6.3.1_BaseModel ,p95    ,u95            ,g01
