@@ -22,12 +22,12 @@ Historic events associated with the historic bivariate surge data was also run.
 
 A summary of the events is shown below:
 
-![Alt text](image.png)
+![Alt text](data/image.png)
+
 
 Initial uncalibrated results, suggest some discrepancies between AEP events and expected results as shown in the figure below:
 
-![Alt text](image-1.png)
-
+![Alt text](data/image-1.png)
 ## Purpose
 
 The purpose of this QAQC is to compare the results of the bivariate compound flood modeling approach to the Atlas 14 and historic events. This will be done by comparing the water surface elevations at the same locations and looking at a animation of the precipitation as it occurs over the watershed.
