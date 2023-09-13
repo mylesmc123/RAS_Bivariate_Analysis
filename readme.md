@@ -22,11 +22,11 @@ Historic events associated with the historic bivariate surge data was also run.
 
 A summary of the events is shown below:
 
-![Alt text](image.png)
+![Alt text](data/image.png)
 
 Initial uncalibrated results, suggest some discrepancies between AEP events and expected results as shown in the figure below:
 
-![Alt text](image-1.png)
+![Alt text](data/image-1.png)
 
 ## Purpose
 
