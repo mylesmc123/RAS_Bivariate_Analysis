@@ -24,7 +24,6 @@ A summary of the events is shown below:
 
 ![Alt text](data/image.png)
 
-
 Initial uncalibrated results, suggest some discrepancies between AEP events and expected results as shown in the figure below:
 
 ![Alt text](data/image-1.png)
