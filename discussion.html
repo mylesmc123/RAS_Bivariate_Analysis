@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Bootstrap Template With Sticky Menu</title>
+    <meta name="description" content="Simplified Bootstrap template with sticky menu">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/sticky-menu.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <div class="topnav">
+        <a href="/index.html">Map</a>
+        <a href="/max_wse.html">Max WSE Across Events</a>
+        <a class="active" href="/discussion.html">Discussion</a>
+    </div>
+    <!-- Welcome   -->
+    <section id="welcome" class="welcome-section">
+        <div id='Bivariate Analysis Results Discussion'>
+            <h1>Results</h1>
+            <p><a href="https://github.com/mylesmc123/RAS_2d_qaqc.git">https://github.com/mylesmc123/RAS_2d_qaqc.git</a></p>
+            <h4 id="author-myles-mcmanus-twi-mmcmanus-thewaterinstitute-org">Author: Myles McManus, TWI mmcmanus@thewaterinstitute.org</h4>
+            <h4 id="date-2023-09-01">Date: 2023-09-01</h4>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 id="background">Background</h1>
+                    <br>
+            <p>For the RAS 2D GLO Model, a bivariate compound flood modeling approach is used. This involves using historical surge data combined with propabalistic based rainfall.</p>
+            <p>AEP Rainfall has been run for three different flood drivers: Most Likely, Surge Dominant, and Precip Dominant. Precipation data has been run for these 3 drivers for each AEP event.</p>
+            <p>The AEP events run include: 10, 50, 100, and 500 year return events.</p>
+            <p>In addition to the bivariate AEP events, Atlas 14 Everywhere Precip events were run for the same AEPs.</p>
+            <p>Historic events associated with the historic bivariate surge data was also run.</p>
+            <p>A summary of the events is shown below:</p>
+            <p><img src="data/image.png" ></p>
+            <br>
+            <p>Initial uncalibrated results, suggest some discrepancies between AEP events and expected results as shown in the figure below:</p>
+            <br>
+            <p style="text-align: center;"><img src="data/image-1.png" width="1500" height="800"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What we do Section -->
+    <section id="whatwedo" class="whatwedo-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 id="data">Data</h1>
+                    <br>
+            <h3 id="qaqc-points">QAQC Points</h3>
+            <p>The qaqc points.geojson was generate via RAS Mapper and QGIS using the following steps:</p>
+            <p>Used RAS Mapper to export mesh.shp.</p>
+            <p style="text-align: left;"><img src="data/RASMapper.png" width="1500" height="800">></p>
+            <p>Used the QGIS tool called &quot;Regular Points&quot; o mesh.shp to create points.geojson.</p>
+            <p style="text-align: center;"><img src="data/QGIS Regular Points.png" alt="Alt text"></p>
+            <br>
+            <p>Then deleted points that were outside of mesh.shp.</p>
+            <p><img src="data/GLO Clipped Regular Points.png" alt="Alt text"></p>
+            <p>And labeled The QAQC points.</p>
+            <p><img src="data/basin_points.png" alt="Alt text"></p>
+            <h3 id="wse-timeseries-data-to-a-event-based-json-file-contained-wse-data-for-each-point-">WSE Timeseries Data to a Event-Based Json file contained WSE data for each point.</h3>
+            <p>This data was generated using &quot;points_to_event_wse_json.py&quot;</p>
+            <h4 id="points_to_event_wse_json-py">points_to_event_wse_json.py</h4>
+            <p>This script reads WSE data from a set of HEC-RAS HDF plan files determined by a CSV file: &quot;Z:\py\RAS_Bivariate_Analysis\data\GLO RAS Model Runs Distribution to Modelers.csv</p>
+            <p><img src="data/image.png" alt="Alt text"></p>
+            <p>For each HDF, the nearest QAQC points on the RAS Mesh were found and extracted to an event-based Json File containing WSE data for each QAQC point.</p>
+            <h4 id="map-js">Map.js</h4>
+            <p>The results have been published to the following website: 
+            <a href="https://glo-bivariate-results.onrender.com/index.html">https://glo-bivariate-results.onrender.com/index.html</a></p>
+            <p>This script is used to produce a map of teh QAQC points, and when a point is clicked, reads the event-based Json file and plots the WSE data for each QAQC point on the map.</p>
+            <p><img src="data/website map.png" alt="Alt text"></p>
+            <h3 id="wse-timeseries-data-to-each-point-across-all-events-">WSE Timeseries Data to each point across all events.</h3>
+            <p>This data was generated using &quot;dev_wse_map_points_from_event_jsons.ipynb&quot; and is added to the website using the top toolbar to navigate to &quot;Max WSE Across Events&quot;. </p>
+            <p><img src="data/toolbar.png" alt="Alt text"></p>
+            <p>This figure allows us to view trends in the data for points across the events by using only the maximum WSE for a point across each event.</p>
+            <p><img src="data/max wse.png" alt="Alt text"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 id="results">Results</h1>
+            <p>The results have been published to the following website: 
+            <a href="https://glo-bivariate-results.onrender.com/index.html">https://glo-bivariate-results.onrender.com/index.html</a></p>
+            <p>The results of the analysis suggest that the bivariate compound flood modeling approach is producing reasonable results based on the data input into the model. There is a limited set of downstream boundary condition surge data being used from ADCIRC output for particular historic events. This limited set of ADCIRC data caused multiple AEP events to use the same surge data as showin in the following table:</p>
+            <p><img src="data/AEP Surge Historic Selected Table.png" alt="Alt text"></p>
+            <p> In addition the Historic events selected to use for the Surge data for the AEP events have lower Surge values than the AEP should have according to the bivariate anaylsis performed by Iowa University to develop the bivariate rainfall data as shown in the figure below:</p>
+            <p><img src="data/Bivariate Results - Rollover Pass.png" alt="Alt text"></p>
+            <p>Results of the bivariate modeling of NTR and precipitation for Rollover Pass. The diamonds represent the most likely design event for different return periods (see Table 5 2 for their values), while the triangles represent the values under the assumption of full dependence. The black circles represent two additional design events that can be considered for hydrologic simulations (see Table 5 2 for their values). The relative likelihood of an event on an isoline is represented by the colored contours (i.e., the redder the more likely). </p>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	<a id="back2Top" title="Back to top" href="#">&#10148;</a>
+	
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/sticky-menu.js"></script>
+
+</body>
+
+</html>
