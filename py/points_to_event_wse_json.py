@@ -1,4 +1,5 @@
-# Purpose: For a set of points get WSE timeseries from multiple HEC-RAS H files and output to a JSON file for each point location.
+# Purpose: For a set of points get WSE timeseries from multiple HEC-RAS HDF Plan files and output to a JSON file for each RAS simulation event.
+# Create a JSON file for each for each event that contains the WSE timeseries for each QAQC point.
 
 
 # %%
@@ -29,7 +30,7 @@ def ckdnearest(gdfA, gdfB):
 
     return gdf
 
-# HEC-RAS H plan files to process.
+# HEC-RAS HDF plan files to process.
 df_plan = pd.read_csv('GLO RAS Model Runs Distribution to Modelers.csv', header=0, skipinitialspace = True).drop(0).reset_index().drop(columns=['index'])
 # Cleanup naming and drop the columns we don't need.
 df_plan = df_plan.drop(columns=['Modeler   ',
