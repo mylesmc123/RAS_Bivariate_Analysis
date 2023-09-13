@@ -17,6 +17,11 @@ html {
         padding: 0;
     }
 }
+
+p {
+    font-size: 20px;
+  }
+
 #back2Top {
     width: 40px;
     line-height: 40px;
@@ -43,28 +48,28 @@ html {
     color: #FFF;
 }
 .welcome-section {
-    height: 50%;
+    height: 30%;
     padding-top: 150px;
     text-align: center;
-    background: #ffffff85;
+    background: #dbe7a4f8;
 }
 .about-section {
     height: auto;
     padding-top: 50px;
     text-align: center;
-    background: #EFDECD;
+    background: #f0d1b1;
 }
 .whatwedo-section {
     height: auto;
     padding-top: 50px;
     text-align: center;
-    background: #ffffff5d;
+    background: #9ccae985;
 }
 .contact-section {
     height: auto;
     padding-top: 50px;
     text-align: center;
-    background: #EFDECD;
+    background: #c098e0;
 }
 .navbar-default .navbar-nav > li > a:hover {
 	color: #333;
