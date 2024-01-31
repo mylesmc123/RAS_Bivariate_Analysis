@@ -132,27 +132,6 @@ map.on('style.load', function () {
     // add div to DOM before creating plotly plot
     .setHTML('<div id="plotlyPlot"/>')
     .addTo(map);
-
-    let ml10_max = null;
-    let ml50_max = null;
-    let ml100_max = null;
-    let ml500_max = null;
-    
-    let pd10_max = null;
-    let pd50_max = null;
-    let pd100_max = null;
-    let pd500_max = null;
-
-    let sd10_max = null;
-    let sd50_max = null;
-    let sd100_max = null;
-    let sd500_max = null;
-
-    let atlas10_max = null;
-    let atlas50_max = null;
-    let atlas100_max = null;
-    let atlas500_max = null;
-
     
     // Get timeseries json data
     fetch(`../output/mapByReferencePoints/point_jsons/${point_id}.json`)
@@ -167,60 +146,6 @@ map.on('style.load', function () {
         var values = data[key]['wse'];
         var times = data[key]['datetime'];
         
-        
-        // Get max values for plot title
-        if (key == '010yr MostLikely Bivariate') {
-          ml10_max = parseFloat(Math.max(...values).toFixed(2));
-        }
-        if (key == '050yr MostLikely Bivariate') {
-          ml50_max = parseFloat(Math.max(...values).toFixed(2));
-        }
-        if (key == '100yr MostLikely Bivariate') {
-          ml100_max = parseFloat(Math.max(...values).toFixed(2));
-        }
-        if (key == '500yr MostLikely Bivariate') {
-          ml500_max = parseFloat(Math.max(...values).toFixed(2));
-        }
-
-        if (key == '010yr Left PD Bivariate') {
-          pd10_max = parseFloat(Math.max(...values).toFixed(2));
-        }
-        if (key == '050y  Left PD Bivariate') {
-          pd50_max = parseFloat(Math.max(...values).toFixed(2));
-        }
-        if (key == '100yr Left PD Bivariate') {
-          pd100_max = parseFloat(Math.max(...values).toFixed(2));
-        }
-        if (key == '500yr Left PD Bivariate') {
-          pd500_max = parseFloat(Math.max(...values).toFixed(2));
-        }
-        
-        if (key == '010yr Right SD Bivariate') {
-          sd10_max = parseFloat(Math.max(...values).toFixed(2));
-        }
-        if (key == '050yr Right SD Bivariate') {
-          sd50_max = parseFloat(Math.max(...values).toFixed(2));
-        }
-        if (key == '100yr Right SD Bivariate') {
-          sd100_max = parseFloat(Math.max(...values).toFixed(2));
-        }
-        if (key == '500yr Right SD Bivariate') {
-          sd500_max = parseFloat(Math.max(...values).toFixed(2));
-        }
-        
-        if (key == '010yr Atlas 14') {
-          atlas10_max = parseFloat(Math.max(...values).toFixed(2));
-        }
-        if (key == '050yr Atlas 14') {
-          atlas50_max = parseFloat(Math.max(...values).toFixed(2));
-        }
-        if (key == '100yr Atlas 14') {
-          atlas100_max = parseFloat(Math.max(...values).toFixed(2));
-        }
-        if (key == '500yr Atlas 14') {
-          atlas500_max = parseFloat(Math.max(...values).toFixed(2));
-        }
-
         // console.log(values);
         var trace =
           {
@@ -235,12 +160,7 @@ map.on('style.load', function () {
       // console.log(tracedata);
       var layout = {
         title: {
-          text: `<b>WSE at point ${point_id}</b><br>
-          <i>Max ML:</i> 500yr=${ml500_max} , 100yr=${ml100_max} , 50yr=${ml50_max} ,10yr=${ml10_max}<br>
-          <i>Max PD:</i> 500yr=${pd500_max} , 100yr=${pd100_max} , 50yr=${pd50_max} ,10yr=${pd10_max}<br>
-          <i>Max SD:</i> 500yr=${sd500_max} , 100yr=${sd100_max} , 50yr=${sd50_max} ,10yr=${sd10_max}<br>
-          <i>Atlas 14:</i> 500yr=${atlas500_max} , 100yr=${atlas100_max} , 50yr=${atlas50_max} ,10yr=${atlas10_max}<br>`,
-          // text: `WSE at point ${point_id}`,
+          text: `<b>WSE at point ${point_id}</b><br>`,
           xref: 'paper',
           x: 0.05,
         },
