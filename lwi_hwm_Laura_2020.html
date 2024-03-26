@@ -7,8 +7,7 @@
     <body>
         <link rel="stylesheet" href="./css/styles.css">
         <!-- <link rel="stylesheet" href="./css/layerControl.css"> -->
-        <!-- <link rel="stylesheet" href="./css/legend.css"> -->
-        <!-- <link rel="stylesheet" href="./css/plotly.css"> -->
+        <link rel="stylesheet" href="./css/legend.css">
 
         <script src='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js'></script>
         <link href='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css' rel='stylesheet' />
@@ -25,6 +24,9 @@
         <!-- <script type="module" src='./js/layerControlSimple.js'></script>
         <script type="module" src='./js/layerControlGrouped.js'></script> -->
         <script type="module" src='./js/markers.js'></script>
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js" integrity="sha512-wNH6xsp2n8CfB91nrBtfc4sfLwYPBMjSWVUwQOp60AYYXH6i8yCwuKFZ4rgK2i6pQek/b+bSyR7b01/922IBzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         <!-- <script type="text/javascript" src='js\sidebarToggle.js'></script>
 
@@ -44,12 +46,21 @@
             <a href="/lwi_comptime_compare.html">LWI 10 vs 5min</a>
             <a class="active" href="/lwi_hwm_Laura_2020.html">WSE vs High Water Marks - Laura 2020</a>
         </div>
-
+        <!-- <div id="legend"></div> -->
         <div id='map'>
-            
         </div>
+            <div id="state-legend" class="legend">
+                <h4>HWM vs WSE ( +/- ft)</h4>
+                <div><span style="background-color: #9e0142"></span>2</div>
+                <div><span style="background-color: #d53e4f"></span>1</div>
+                <div><span style="background-color: #fee08b"></span>0.5</div>
+                <div><span style="background-color: #e6f598"></span>0.25</div>
+                <div><span style="background-color: #2ca25f"></span>0</div>
+            </div>
 
         <script type="module" src='./js/lwi_hwm_Laura_2020.js'></script>
+        <!-- <script type="module" src='./js/legend.js'></script> -->
+
     </body>
     
 </html>

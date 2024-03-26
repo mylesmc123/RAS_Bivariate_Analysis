@@ -101,17 +101,17 @@ map.on('style.load', function () {
         'interpolate',
         ['linear'],
         ['get', 'diff_min'],
-        -100, '#d73027',
-        -1, '#fc8d59',
+        -2, '#9e0142',
+        -1, '#d53e4f',
         -.5, '#fee08b',
-        -.25, '#3288bd',
-        0, '#99d594',
-        .25, '#fee08b',
-        .5, '#1a9850',
-        1, '#fc8d59',
-        100, '#d73027'
+        -.25, '#e6f598',
+        0, '#2ca25f',
+        .25, '#e6f598',
+        .5, '#fee08b',
+        1, '#d53e4f',
+        2, '#9e0142'
       ],
-      'circle-opacity': 0.75
+      'circle-opacity': 0.95
     }
   });
   
@@ -231,6 +231,9 @@ map.on('style.load', function () {
       var fig = Plotly.newPlot('plotlyPlot', tracedata, layout);
     
     });
+  
+    const stateLegendEl = document.getElementById('state-legend');
+    stateLegendEl.style.display = 'block';
 
   });
 
