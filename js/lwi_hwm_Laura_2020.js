@@ -93,12 +93,25 @@ map.on('style.load', function () {
     'type': 'circle',
     'source': {
       type: "geojson",
-      data: "../data/Laura 2020 4326.geojson"
+      data: "../output/mapByHWM/all_points/Laura_2020_HWMs.geojson"
     },
     'paint': {
       'circle-radius': 6,
-      'circle-color': 'teal',
-      'circle-opacity': 0.5
+      'circle-color': [
+        'interpolate',
+        ['linear'],
+        ['get', 'diff_min'],
+        -100, '#d73027',
+        -1, '#fc8d59',
+        -.5, '#fee08b',
+        -.25, '#3288bd',
+        0, '#99d594',
+        .25, '#fee08b',
+        .5, '#1a9850',
+        1, '#fc8d59',
+        100, '#d73027'
+      ],
+      'circle-opacity': 0.75
     }
   });
   
@@ -201,9 +214,9 @@ map.on('style.load', function () {
       // var hwm_times = data['datetime'];
       // console.log(tracedata)
       var hwm_line = {
-        name: `HWM = ${data['elev']} ft`,
+        name: `HWM = ${data['properties']['elev']} ft`,
         x: [times[0], times[1]],
-        y: [data['elev'], data['elev']],
+        y: [data['properties']['elev'], data['properties']['elev']],
         type: 'scatter',
         mode: 'lines',
         line: {
@@ -270,5 +283,8 @@ function showGeoJSONPoints(geojson) {
   return markers
 };
 
+function getColor() {
+
+}
 
   

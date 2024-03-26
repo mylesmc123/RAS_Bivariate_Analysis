@@ -155,10 +155,11 @@ if not os.path.exists(pt_json_output_dir):
 for i, row in gdf_qaqc.iterrows():
     # print (f'Processing point: {row["site_no"]}')
     pt_dict = {}
-    pt_dict['site_no'] = row['site_no']
-    pt_dict['elev'] = row['elev_ft']
-    pt_dict['quality'] = row['hwmQuality']
-    pt_dict['verticalDatum'] = row['verticalDa']
+    pt_dict['properties'] = {}
+    pt_dict['properties']['site_no'] = row['site_no']
+    pt_dict['properties']['elev'] = row['elev_ft']
+    pt_dict['properties']['quality'] = row['hwmQuality']
+    pt_dict['properties']['verticalDatum'] = row['verticalDa']
     for wse_json_file in event_wse_json_files:
         wse_json = json.load(open(wse_json_file, 'r'))
         for pointData in wse_json['pointData']:
@@ -168,7 +169,26 @@ for i, row in gdf_qaqc.iterrows():
                 pt_dict[planName] = {}
                 pt_dict[planName]['datetime'] = wse_json['datetime']
                 pt_dict[planName]['wse'] = pointData['wse']
+                # get max wse
+                max_wse = max(pointData['wse'])
+                pt_dict[planName]['max_wse'] = max_wse
+                # get difference between max wse and point elevation
+                pt_dict['properties'][f'{planName}_HWM-WSE_diff'] = row['elev_ft'] - max_wse
+                # place the diff as a column onto to the gdf.
+                gdf_qaqc.at[i, f'{planName}_HWM-WSE_diff'] = row['elev_ft'] - max_wse
+                
                 json.dump(pt_dict, open(f"{pt_json_output_dir}/{row['site_no']}.json", 'w'))
+
+# %%
+# for all diff columns containing in the column name: "HWM-WSE_diff", get the min value as a new column: "diff_min".
+diff_cols = [col for col in gdf_qaqc.columns if 'HWM-WSE_diff' in col]
+gdf_qaqc['diff_min'] = gdf_qaqc[diff_cols].min(axis=1)
+gdf_qaqc['diff_min'] = gdf_qaqc['diff_min'].round(2)
+gdf_qaqc.head()
+# Save updated qa/qc gdf with HWM-WSE_diff columns back to json.
+gdf_qaqc.to_file("../output/mapByHWM/all_points/Laura_2020_HWMs.geojson", driver='GeoJSON')
+
+
 # %%
 # set up plotly figure
 fig = go.Figure()
