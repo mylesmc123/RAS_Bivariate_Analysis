@@ -49,8 +49,10 @@ hdf_files = [
 ]
 
 # Open QAQC points as a geodataframe.
+#QAQC points includes a colunamed "RASMap_Max" which is produced by importing a point layer in to ras map and outputting a results layer of WSE Max using the point layer.
+# The result layer was exported to shp, reprojected, converted to geojson, and column was renamed using QGIS.
 gdf_qaqc = gpd.read_file(r"V:\projects\p00832_ocd_2023_latz_hr\01_processing\GIS\Collected_HWMs\LA_high_water_mark_data_USGS\Laura 2020 4326.geojson")
-gdf_qaqc = gdf_qaqc[["geometry", "site_no", "elev_ft", "hwmQuality", "verticalDa"]]
+gdf_qaqc = gdf_qaqc[["geometry", "site_no", "elev_ft", "hwmQuality", "verticalDa", "RASMap_Max"]]
 
 
 # df_plan
@@ -160,6 +162,7 @@ for i, row in gdf_qaqc.iterrows():
     pt_dict['properties']['elev'] = row['elev_ft']
     pt_dict['properties']['quality'] = row['hwmQuality']
     pt_dict['properties']['verticalDatum'] = row['verticalDa']
+    pt_dict['properties']['RASMap_MaxWSE'] = row['RASMap_Max']
     for wse_json_file in event_wse_json_files:
         wse_json = json.load(open(wse_json_file, 'r'))
         for pointData in wse_json['pointData']:
@@ -187,7 +190,6 @@ gdf_qaqc['diff_min'] = gdf_qaqc['diff_min'].round(2)
 gdf_qaqc.head()
 # Save updated qa/qc gdf with HWM-WSE_diff columns back to json.
 gdf_qaqc.to_file("../output/mapByHWM/all_points/Laura_2020_HWMs.geojson", driver='GeoJSON')
-
 
 # %%
 # set up plotly figure

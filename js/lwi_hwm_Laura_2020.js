@@ -225,7 +225,22 @@ map.on('style.load', function () {
           dash: 'dashdot'
         }
       };
-      tracedata.push(hwm_line);      
+      tracedata.push(hwm_line);   
+      
+      var rasmap_wsemax_line = {
+        name: `RAS Mapper Max WSE = ${data['properties']['RASMap_MaxWSE']} ft`,
+        x: [times[0], times[1]],
+        y: [data['properties']['RASMap_MaxWSE'], data['properties']['RASMap_MaxWSE']],
+        type: 'scatter',
+        mode: 'lines',
+        line: {
+          color: 'blue',
+          width: 4,
+          dash: 'dashdot'
+        }
+      };
+      tracedata.push(rasmap_wsemax_line);
+      
       console.log(tracedata)
 
       var fig = Plotly.newPlot('plotlyPlot', tracedata, layout);
